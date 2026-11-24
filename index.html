@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- SEO local: quando tiver a cidade, acrescente no title e na description. -->
+<title>Gestão de tráfego pago para negócios locais | Laitu marketing e mídias</title>
+<meta name="description" content="Anúncios no Google, Facebook e Instagram, gestão do Google Meu Negócio e criação de sites para negócios locais. Fale com a Laitu no WhatsApp.">
+<meta name="theme-color" content="#0B2A3C">
+
+<!-- Open Graph: ao publicar, acrescente og:url e og:image (1200 x 630 px). -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Laitu marketing e mídias">
+<meta property="og:title" content="Laitu: seu negócio aparece quando o cliente pesquisa">
+<meta property="og:description" content="Google Ads, Meta Ads, Google Meu Negócio e criação de sites para negócios locais.">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- CSS crítico da abertura: impede a página de aparecer quebrada. -->
+<style>
+  .pre { display: none; }
+  html.carregando { overflow: hidden; }
+  html.carregando .pre {
+    display: grid; place-items: center;
+    position: fixed; inset: 0; z-index: 100;
+    background: #0B2A3C; color: #F6EFE4;
+  }
+</style>
+<script>
+  /* A abertura completa aparece só na primeira visita da sessão.
+     Se algo falhar, a trava de 4,5 s libera a página. */
+  (function () {
+    var r = document.documentElement, visto = false;
+    r.classList.add('js');
+    try { visto = sessionStorage.getItem('laitu-abertura') === '1'; } catch (e) {}
+    if (!visto && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      r.classList.add('carregando');
+      setTimeout(function () { r.classList.remove('carregando'); }, 4500);
+    }
+  })();
+</script>
+
+<!-- Ao alterar CSS ou JS, aumente o ?v= para o navegador baixar a versão nova -->
+<link rel="stylesheet" href="css/estilos.css?v=8">
+
+<!-- Dados estruturados. Ao ter os dados reais, acrescente "address", "openingHours", "url" e "sameAs". -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Laitu marketing e mídias",
+  "description": "Gestão de tráfego pago, Google Meu Negócio e criação de sites para negócios locais.",
+  "telephone": "+5521974388118",
+  "email": "ramalho.tour@gmail.com",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Ads" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Meta Ads" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão de Google Meu Negócio" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Criação de sites" } }
+    ]
+  }
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+<script src="js/main.js?v=4" defer></script>
+</head>
+<body>
+
+<!-- Abertura animada -->
+<div class="pre" aria-hidden="true">
+  <div class="pre-marca">
+    <svg viewBox="0 0 56 56" width="72" height="72">
+      <rect class="pre-l" width="14" height="56" rx="6" fill="#F6EFE4"/>
+      <rect class="pre-pe" y="42" width="40" height="14" rx="6" fill="#F6EFE4"/>
+      <g class="pre-seta">
+        <polygon points="38,5 24,18 52,18" fill="#F2A33A" stroke="#F2A33A" stroke-width="6" stroke-linejoin="round"/>
+        <rect x="31" y="16" width="14" height="22" rx="4" fill="#F2A33A"/>
+      </g>
+    </svg>
+    <div class="pre-mascara"><span class="pre-nome">Laitu</span></div>
+  </div>
+</div>
+
+<!-- Cortina usada na navegação entre seções -->
+<div class="cortina" aria-hidden="true"></div>
+
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+
+<header class="topo">
+  <div class="wrap topo-linha">
+    <a class="logo" href="#inicio" aria-label="Laitu marketing e mídias, início">
+      <svg viewBox="0 0 190 66" aria-hidden="true">
+        <rect width="14" height="56" rx="6" fill="#F6EFE4"/>
+        <rect y="42" width="40" height="14" rx="6" fill="#F6EFE4"/>
+        <polygon points="38,5 24,18 52,18" fill="#F2A33A" stroke="#F2A33A" stroke-width="6" stroke-linejoin="round"/>
+        <rect x="31" y="16" width="14" height="22" rx="4" fill="#F2A33A"/>
+        <text x="72" y="44" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="44" fill="#F6EFE4">Laitu</text>
+        <text x="74" y="62" font-family="Inter, Arial, sans-serif" font-size="11" fill="#B5C5CD">marketing e mídias</text>
+      </svg>
+    </a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#quem">Quem sou</a>
+      <a href="#perguntas">Perguntas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="topo-acoes">
+      <a class="btn btn-ambar btn-topo" href="https://wa.me/5521974388118?text=Ol%C3%A1%2C%20quero%20uma%20an%C3%A1lise%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Falar comigo</a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- 1. ABERTURA: mídia em camadas (CSS > imagem > vídeo > 3D) -->
+  <section class="hero" id="inicio">
+    <div class="hero-fundo" aria-hidden="true">
+      <div class="hero-conico"></div>
+
+      <!--
+        VÍDEO DE FUNDO (pronto para ativar)
+        1. Coloque em assets/video: hero-poster.webp, hero.mp4 e hero-celular.mp4
+        2. Troque data-video-ativo para "true"
+        3. Remova o comentário da tag <img> abaixo
+      -->
+      <div class="hero-video" data-video-ativo="false" data-fonte="assets/video/hero.mp4" data-fonte-celular="assets/video/hero-celular.mp4">
+        <!-- <img class="hero-poster" src="assets/video/hero-poster.webp" width="1280" height="720" alt="" fetchpriority="high"> -->
+        <video muted loop playsinline preload="none" tabindex="-1"></video>
+      </div>
+
+      <canvas id="cidade"></canvas>
+      <div class="hero-veu"></div>
+
+      <!--
+        From Uiverse.io by lukepadiachy - https://uiverse.io/lukepadiachy/funny-moose-89
+        MIT License, Copyright (c) lukepadiachy (🅿️adi)
+        Cores adaptadas à paleta da Laitu. Para remover, apague este bloco e o bloco "Cubo" do CSS.
+      -->
+      <div class="hero-cubo">
+        <div class="hero-cubo-giro">
+          <div class="hero-cubo-face frente">
+            <div style="background: var(--terracota);"></div><div style="background: var(--ambar);"></div><div style="background: var(--petroleo-3);"></div>
+            <div style="background: var(--apoio-escuro);"></div><div style="background: var(--creme);"></div><div style="background: var(--ambar);"></div>
+            <div style="background: var(--petroleo-3);"></div><div style="background: var(--apoio-escuro);"></div><div style="background: var(--terracota);"></div>
+          </div>
+          <div class="hero-cubo-face tras">
+            <div style="background: var(--petroleo-3);"></div><div style="background: var(--terracota);"></div><div style="background: var(--ambar);"></div>
+            <div style="background: var(--apoio-escuro);"></div><div style="background: var(--creme);"></div><div style="background: var(--terracota);"></div>
+            <div style="background: var(--ambar);"></div><div style="background: var(--petroleo-3);"></div><div style="background: var(--apoio-escuro);"></div>
+          </div>
+          <div class="hero-cubo-face esquerda">
+            <div style="background: var(--ambar);"></div><div style="background: var(--petroleo-3);"></div><div style="background: var(--apoio-escuro);"></div>
+            <div style="background: var(--terracota);"></div><div style="background: var(--creme);"></div><div style="background: var(--petroleo-3);"></div>
+            <div style="background: var(--apoio-escuro);"></div><div style="background: var(--ambar);"></div><div style="background: var(--terracota);"></div>
+          </div>
+          <div class="hero-cubo-face direita">
+            <div style="background: var(--petroleo-3);"></div><div style="background: var(--terracota);"></div><div style="background: var(--ambar);"></div>
+            <div style="background: var(--apoio-escuro);"></div><div style="background: var(--creme);"></div><div style="background: var(--terracota);"></div>
+            <div style="background: var(--ambar);"></div><div style="background: var(--petroleo-3);"></div><div style="background: var(--apoio-escuro);"></div>
+          </div>
+          <div class="hero-cubo-face cima">
+            <div style="background: var(--apoio-escuro);"></div><div style="background: var(--ambar);"></div><div style="background: var(--terracota);"></div>
+            <div style="background: var(--petroleo-3);"></div><div style="background: var(--creme);"></div><div style="background: var(--ambar);"></div>
+            <div style="background: var(--terracota);"></div><div style="background: var(--petroleo-3);"></div><div style="background: var(--apoio-escuro);"></div>
+          </div>
+          <div class="hero-cubo-face baixo">
+            <div style="background: var(--creme);"></div><div style="background: var(--petroleo-3);"></div><div style="background: var(--apoio-escuro);"></div>
+            <div style="background: var(--terracota);"></div><div style="background: var(--ambar);"></div><div style="background: var(--petroleo-3);"></div>
+            <div style="background: var(--apoio-escuro);"></div><div style="background: var(--creme);"></div><div style="background: var(--terracota);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap hero-conteudo">
+      <h1 class="hero-titulo">Quando o cliente pesquisar, o seu negócio precisa aparecer.</h1>
+      <div class="hero-base">
+        <p class="hero-apoio">Anúncios no Google, no Facebook e no Instagram, Google Meu Negócio e sites para negócios locais. O objetivo é um só: mais gente entrando em contato e comprando de você.</p>
+        <div class="hero-acoes">
+          <a class="btn btn-ambar" href="https://wa.me/5521974388118?text=Ol%C3%A1%2C%20quero%20uma%20an%C3%A1lise%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Pedir uma análise no WhatsApp</a>
+          <a class="btn btn-contorno" href="#servicos">Ver serviços</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. BUSCA SIMULADA: o negócio sobe conforme a rolagem -->
+  <section class="busca-secao" aria-labelledby="titulo-busca">
+    <div class="busca-fixa">
+      <div class="wrap busca-grade">
+        <div class="busca-texto">
+          <h2 id="titulo-busca">Role a página e veja o seu negócio subir.</h2>
+          <p>Anúncios bem feitos e um perfil cuidado ajudam a sua empresa a aparecer antes dos concorrentes, na hora em que o cliente procura.</p>
+        </div>
+        <div class="busca" role="group" aria-label="Simulação de uma busca local">
+          <div class="busca-campo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
+            <span id="termo">padaria perto de mim</span>
+          </div>
+          <div class="nichos" role="group" aria-label="Escolha um tipo de negócio">
+            <button type="button" data-nicho="padaria" aria-pressed="true">Padaria</button>
+            <button type="button" data-nicho="dentista" aria-pressed="false">Dentista</button>
+            <button type="button" data-nicho="advogado" aria-pressed="false">Advocacia</button>
+            <button type="button" data-nicho="restaurante" aria-pressed="false">Restaurante</button>
+          </div>
+          <ol class="resultados" id="resultados">
+            <li class="resultado seu">
+              <div><strong id="nome-negocio">Sua padaria</strong><span>Aberto agora, a 400 m</span></div>
+              <svg class="seta" viewBox="20 0 36 40" aria-hidden="true"><polygon points="38,5 24,18 52,18" fill="#0B2A3C" stroke="#0B2A3C" stroke-width="6" stroke-linejoin="round"/><rect x="31" y="16" width="14" height="22" rx="4" fill="#0B2A3C"/></svg>
+            </li>
+            <li class="resultado r-a"><div><strong>Concorrente A</strong><span>Aberto agora, a 1,2 km</span></div></li>
+            <li class="resultado r-b"><div><strong>Concorrente B</strong><span>Fecha às 18h, a 2,1 km</span></div></li>
+          </ol>
+          <small>Simulação ilustrativa. A posição real depende de cada mercado e de cada busca.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SERVIÇOS -->
+  <section class="servicos" id="servicos" aria-labelledby="titulo-servicos">
+    <div class="wrap">
+      <div class="secao-topo">
+        <h2 id="titulo-servicos">O que fazemos pelo seu negócio</h2>
+        <p>Cada botão abre o WhatsApp já com o serviço escolhido.</p>
+      </div>
+    </div>
+
+    <!-- Carrossel: desliza no toque, arrasta com o mouse, setas e pontos -->
+    <div class="carrossel" role="group" aria-roledescription="carrossel" aria-label="Serviços da Laitu">
+      <ul class="trilho" tabindex="0" aria-label="Lista de serviços. Use as setas do teclado para deslizar.">
+        <li class="serv">
+          <div class="serv-palco">
+            <svg class="serv-logo" viewBox="0 0 48 48" role="img" aria-label="Logo do Google">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
+          </div>
+          <div class="serv-corpo">
+            <h3>Google Ads</h3>
+            <span class="serv-sub">Anunciar no Google</span>
+            <p>Sua empresa aparece para quem está pesquisando o seu produto ou serviço na sua região.</p>
+            <a class="btn btn-ambar" href="https://wa.me/5521974388118?text=Ol%C3%A1%2C%20quero%20anunciar%20no%20Google." target="_blank" rel="noopener" aria-label="Quero anunciar no Google pelo WhatsApp">Quero anunciar</a>
+          </div>
+        </li>
+        <li class="serv">
+          <div class="serv-palco">
+            <svg class="serv-logo" viewBox="0 0 24 24" role="img" aria-label="Logo da Meta">
+              <path fill="#0866FF" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/>
+            </svg>
+          </div>
+          <div class="serv-corpo">
+            <h3>Meta Ads</h3>
+            <span class="serv-sub">Anunciar no Facebook e no Instagram</span>
+            <p>Campanhas no feed e nos stories para pessoas que moram ou circulam perto de você.</p>
+            <a class="btn btn-ambar" href="https://wa.me/5521974388118?text=Ol%C3%A1%2C%20quero%20anunciar%20no%20Facebook%20e%20no%20Instagram." target="_blank" rel="noopener" aria-label="Quero anunciar no Facebook e no Instagram pelo WhatsApp">Quero anunciar</a>
+          </div>
+        </li>
+        <li class="serv">
+          <div class="serv-palco">
+            <svg class="serv-logo" viewBox="0 0 24 24" role="img" aria-label="Símbolo do Google Meu Negócio">
+              <path fill="#4285F4" d="M3.273 1.636c-.736 0-1.363.492-1.568 1.16L0 9.272c0 1.664 1.336 3 3 3a3 3 0 003-3c0 1.664 1.336 3 3 3a3 3 0 003-3c0 1.65 1.35 3 3 3 1.664 0 3-1.336 3-3 0 1.664 1.336 3 3 3s3-1.336 3-3l-1.705-6.476a1.646 1.646 0 00-1.568-1.16zm8.729 9.326c-.604 1.063-1.703 1.81-3.002 1.81-1.304 0-2.398-.747-3-1.806-.604 1.06-1.702 1.806-3 1.806-.484 0-.944-.1-1.363-.277v8.232c0 .9.736 1.637 1.636 1.637h17.454c.9 0 1.636-.737 1.636-1.637v-8.232a3.48 3.48 0 01-1.363.277c-1.304 0-2.398-.746-3-1.804-.602 1.058-1.696 1.804-3 1.804-1.299 0-2.394-.75-2.998-1.81zm5.725 3.765c.808 0 1.488.298 2.007.782l-.859.859a1.623 1.623 0 00-1.148-.447c-.98 0-1.772.827-1.772 1.806 0 .98.792 1.807 1.772 1.807.882 0 1.485-.501 1.615-1.191h-1.615v-1.16h2.826c.035.196.054.4.054.613 0 1.714-1.147 2.931-2.88 2.931a3 3 0 010-6z"/>
+            </svg>
+          </div>
+          <div class="serv-corpo">
+            <h3>Google Meu Negócio</h3>
+            <span class="serv-sub">Aparecer no mapa e na busca local</span>
+            <p>Criamos e gerenciamos o seu perfil, com fotos, horários e avaliações sempre em dia.</p>
+            <a class="btn btn-ambar" href="https://wa.me/5521974388118?text=Ol%C3%A1%2C%20quero%20ajuda%20com%20o%20meu%20Google%20Meu%20Neg%C3%B3cio." target="_blank" rel="noopener" aria-label="Quero ajuda com o Google Meu Negócio pelo WhatsApp">Quero ajuda</a>
+          </div>
+        </li>
+        <li class="serv">
+          <div class="serv-palco serv-palco-site">
+            <!-- Ilustração própria: uma página sendo montada -->
+            <svg class="serv-ilustra" viewBox="0 0 260 190" role="img" aria-label="Ilustração de um site sendo criado">
+              <rect x="1" y="1" width="258" height="188" rx="14" fill="#F6EFE4"/>
+              <path d="M1 34V15A14 14 0 0 1 15 1h230a14 14 0 0 1 14 14v19z" fill="#1C4C66"/>
+              <circle cx="20" cy="18" r="4.5" fill="#F2A33A"/><circle cx="35" cy="18" r="4.5" fill="#F6EFE4"/><circle cx="50" cy="18" r="4.5" fill="#B5C5CD"/>
+              <rect x="72" y="10" width="166" height="16" rx="8" fill="#0B2A3C"/>
+              <rect x="20" y="52" width="118" height="12" rx="6" fill="#0B2A3C"/>
+              <rect x="20" y="72" width="92" height="12" rx="6" fill="#0B2A3C"/>
+              <rect x="20" y="96" width="108" height="6" rx="3" fill="#2B3A42" opacity=".45"/>
+              <rect x="20" y="108" width="84" height="6" rx="3" fill="#2B3A42" opacity=".45"/>
+              <rect x="20" y="128" width="72" height="26" rx="8" fill="#F2A33A"/>
+              <rect x="154" y="52" width="86" height="102" rx="10" fill="#1C4C66"/>
+              <path d="M197 76l-18 18h11v28h14V94h11z" fill="#F2A33A"/>
+              <path d="M112 136l26 10-11 4-4 11z" fill="#C8643B" stroke="#F6EFE4" stroke-width="2.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="serv-corpo">
+            <h3>Criação de sites</h3>
+            <span class="serv-sub">Ter um site profissional</span>
+            <p>Sites e landing pages rápidos, claros e feitos para o cliente entrar em contato.</p>
+            <a class="btn btn-ambar" href="https://wa.me/5521974388118?text=Ol%C3%A1%2C%20quero%20criar%20um%20site." target="_blank" rel="noopener" aria-label="Quero criar um site pelo WhatsApp">Quero um site</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="wrap carrossel-controles">
+        <div class="pontos">
+          <button type="button" aria-label="Ver Google Ads"></button>
+          <button type="button" aria-label="Ver Meta Ads"></button>
+          <button type="button" aria-label="Ver Google Meu Negócio"></button>
+          <button type="button" aria-label="Ver Criação de sites"></button>
+        </div>
+        <div class="setas">
+          <button type="button" class="seta-btn" data-dir="-1" aria-label="Serviço anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" class="seta-btn" data-dir="1" aria-label="Próximo serviço"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. DIFERENCIAIS: texto revelado palavra por palavra -->
+  <section class="manifesto" id="diferenciais" aria-labelledby="titulo-diferenciais">
+    <div class="wrap">
+      <h2 id="titulo-diferenciais">Por que trabalhar com a Laitu</h2>
+      <p class="manifesto-texto">O foco é venda, não curtida. Você fala direto comigo, sem jargão, e entende para onde vai cada real investido. Se uma campanha não estiver dando certo, você vai saber por mim.</p>
+      <a class="btn btn-ambar" href="https://wa.me/5521974388118?text=Ol%C3%A1%2C%20quero%20uma%20an%C3%A1lise%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Conversar sobre o meu negócio</a>
+    </div>
+  </section>
+
+  <!-- 5. QUEM SOU -->
+  <section class="quem" id="quem" aria-labelledby="titulo-quem">
+    <div class="wrap quem-grade">
+      <figure class="foto">
+        <!-- Troque o bloco abaixo por:
+             <img src="assets/img/anderson.webp" width="800" height="1000" alt="Anderson, da Laitu" loading="lazy"> -->
+        <div class="foto-ph">
+          <svg viewBox="0 0 56 56" aria-hidden="true">
+            <rect width="14" height="56" rx="6" fill="#F6EFE4"/>
+            <rect y="42" width="40" height="14" rx="6" fill="#F6EFE4"/>
+            <polygon points="38,5 24,18 52,18" fill="#F2A33A" stroke="#F2A33A" stroke-width="6" stroke-linejoin="round"/>
+            <rect x="31" y="16" width="14" height="22" rx="4" fill="#F2A33A"/>
+          </svg>
+          <!-- Escondido até ter a foto real: --><span hidden>[INSERIR FOTO REAL]</span>
+        </div>
+      </figure>
+      <div class="quem-texto">
+        <h2 id="titulo-quem">Anderson</h2>
+        <p class="cargo">Desenvolvedor de tráfego e IA</p>
+        <p>Criei a Laitu para ajudar quem tem um negócio de portas abertas a ser encontrado por quem está por perto e pronto para comprar.</p>
+        <p>Padaria, consultório, escritório ou restaurante: o trabalho começa entendendo o que você vende e quem compra de você, para colocar sua empresa na frente da pessoa certa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PROVA SOCIAL: somente dados reais. Escondida até ter depoimentos reais: apague "hidden" para mostrar. -->
+  <section class="provas" aria-labelledby="titulo-provas" hidden>
+    <div class="wrap">
+      <h2 id="titulo-provas">Quem já trabalhou com a gente</h2>
+      <ul class="provas-lista">
+        <li><span class="ph">[INSERIR DEPOIMENTO REAL]</span><small class="ph">[NOME E NEGÓCIO DO CLIENTE]</small></li>
+        <li><span class="ph">[INSERIR DEPOIMENTO REAL]</span><small class="ph">[NOME E NEGÓCIO DO CLIENTE]</small></li>
+        <li><span class="ph">[INSERIR RESULTADO REAL]</span><small class="ph">[PERÍODO E ORIGEM DO DADO]</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. PERGUNTAS FREQUENTES -->
+  <section class="perguntas" id="perguntas" aria-labelledby="titulo-perguntas">
+    <div class="wrap perguntas-grade">
+      <h2 id="titulo-perguntas">Perguntas frequentes</h2>
+      <div class="faq">
+        <details>
+          <summary>Vocês garantem o primeiro lugar no Google?</summary>
+          <p>Não. Ninguém pode garantir uma posição, porque ela muda conforme a busca, o local e a concorrência. O trabalho é melhorar as suas chances e mostrar os números com clareza.</p>
+        </details>
+        <details>
+          <summary>Preciso ter um site para anunciar?</summary>
+          <p>Nem sempre. Um anúncio pode levar direto para o WhatsApp, o telefone ou o seu perfil no Google. O site ajuda quando o cliente quer conhecer melhor a empresa antes de chamar.</p>
+        </details>
+        <details>
+          <summary>Em quanto tempo aparecem os resultados?</summary>
+          <p>Os anúncios começam a aparecer depois de aprovados pelas plataformas, mas o resultado em vendas varia com o negócio, a região e o investimento. Por isso não prometemos prazo nem número.</p>
+        </details>
+        <details>
+          <summary>Atendem o meu tipo de negócio?</summary>
+          <p>O foco são negócios locais com estrutura física, como padarias, dentistas, advogados e restaurantes. Se o seu for diferente, chame no WhatsApp e conte o que você faz.</p>
+        </details>
+        <!-- Escondida até definir o texto do preço: apague "hidden" para mostrar. -->
+        <details hidden>
+          <summary>Quanto custa?</summary>
+          <p><span class="ph">[INSERIR COMO FUNCIONA O PREÇO]</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CONTATO E LOCALIZAÇÃO -->
+  <section class="contato" id="contato" aria-labelledby="titulo-contato">
+    <div class="wrap contato-grade">
+      <div>
+        <h2 id="titulo-contato">Vamos ver como o seu negócio aparece hoje?</h2>
+        <p>Chame no WhatsApp e conte o que você vende e em qual bairro ou cidade atende.</p>
+        <a class="btn btn-ambar" href="https://wa.me/5521974388118?text=Ol%C3%A1%2C%20quero%20uma%20an%C3%A1lise%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+      <dl class="dados">
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5521974388118?text=Ol%C3%A1%2C%20quero%20uma%20an%C3%A1lise%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">(21) 97438-8118</a></dd></div>
+        <div><dt>E-mail</dt><dd><a href="mailto:ramalho.tour@gmail.com">ramalho.tour@gmail.com</a></dd></div>
+        <!-- Linhas escondidas até ter os dados reais: apague "hidden" para mostrar. -->
+        <div hidden><dt>Endereço</dt><dd><span class="ph">[INSERIR ENDEREÇO OU ÁREA DE ATENDIMENTO]</span></dd></div>
+        <div hidden><dt>Horário</dt><dd><span class="ph">[INSERIR HORÁRIO]</span></dd></div>
+        <div hidden><dt>Redes</dt><dd><span class="ph">[INSERIR INSTAGRAM E GOOGLE MEU NEGÓCIO]</span></dd></div>
+        <!-- Mapa: cole aqui o iframe do Google Maps com loading="lazy". -->
+        <div hidden><dt>Mapa</dt><dd><span class="ph">[INSERIR MAPA DO GOOGLE]</span></dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <span>Laitu marketing e mídias</span>
+    <span>Google Ads, Meta Ads, sites e Google Meu Negócio</span>
+  </div>
+</footer>
+
+<!-- Botão fixo do WhatsApp -->
+<a class="whats-fixo" href="https://wa.me/5521974388118?text=Ol%C3%A1%2C%20quero%20uma%20an%C3%A1lise%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
