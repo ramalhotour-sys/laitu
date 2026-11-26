@@ -181,7 +181,7 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
 /* Barra some ao rolar para baixo; botão fixo só aparece depois do hero */
 .nav{transition:top .35s ease,opacity .35s ease}
 .nav.hide{top:-90px;opacity:0;pointer-events:none}
-.wa{opacity:0;transform:translateY(18px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+.wa{padding:11px 18px;font-size:15px;gap:8px;opacity:0;transform:translateY(18px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
 .wa.show{opacity:1;transform:none;pointer-events:auto}
 .btn{text-align:center;line-height:1.25}
 .btn svg{flex-shrink:0}
@@ -192,6 +192,8 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
 .chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--ink);background:#E6EEED;border:1px solid rgba(10,42,49,.14);border-radius:999px;padding:7px 14px}
 .logos{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;margin-bottom:20px}
+.logos.row{flex-wrap:nowrap;gap:18px}
+.logos.row img{height:40px;width:auto;display:block}
 .lg{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--ink)}
 .lg img{height:40px;width:auto;display:block}
 .shot{width:100%;max-width:220px;height:auto;display:block;margin-bottom:18px}
@@ -262,7 +264,7 @@ footer .lt-legal-dados{font-size:14px;line-height:1.7}
   .nav{padding:8px 8px 8px 14px}
   .brand small{display:none}
   .nav .btn.sm{padding:10px 14px;font-size:13px}
-  .wa{left:16px;right:16px;bottom:16px;justify-content:center}
+  .wa{left:auto;right:16px;bottom:16px;padding:10px 14px;font-size:13px}
   .nav ul{display:none}
   .hero{padding-top:120px}
   .hero-grid,.about,.final .grid{grid-template-columns:minmax(0,1fr)}
@@ -372,13 +374,13 @@ footer .lt-legal-dados{font-size:14px;line-height:1.7}
         <a class="lnk" href="#diagnostico">Quero isso no meu diagnóstico</a>
       </article>
       <article class="spot" data-reveal>
-        <div class="chips"><span class="chip">Google Meu Negócio</span></div>
+        <div class="logos"><span class="lg"><img src="img/google-meu-negocio.png" alt="" width="44" height="40" loading="lazy" decoding="async"><b>Google Meu Negócio</b></span></div>
         <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
         <h3>Google Meu Negócio</h3><p>Perfil completo, atual e com cara de negócio que merece a ligação: fotos, horários, serviços e avaliações.</p>
         <a class="lnk" href="#diagnostico">Quero isso no meu diagnóstico</a>
       </article>
       <article class="spot" data-reveal>
-        <div class="logos"><span class="lg"><img src="img/meta.png" alt="" width="60" height="40" loading="lazy" decoding="async"><b>Meta Ads</b></span><span class="lg"><img src="img/facebook.png" alt="" width="40" height="40" loading="lazy" decoding="async"><b>Facebook</b></span><span class="lg"><img src="img/instagram.png" alt="" width="40" height="40" loading="lazy" decoding="async"><b>Instagram</b></span></div>
+        <div class="logos row"><img src="img/meta.png" alt="Meta" width="60" height="40" loading="lazy" decoding="async"><img src="img/facebook.png" alt="Facebook" width="40" height="40" loading="lazy" decoding="async"><img src="img/instagram.png" alt="Instagram" width="40" height="40" loading="lazy" decoding="async"></div>
         <h3>Gestão de Meta Ads</h3><p>Anúncios no Facebook e no Instagram para mostrar seu negócio às pessoas certas, perto de você, mesmo antes de elas pesquisarem.</p>
         <a class="lnk" href="#diagnostico">Quero isso no meu diagnóstico</a>
       </article>
