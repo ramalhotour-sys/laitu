@@ -164,7 +164,31 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
 /* WHATSAPP FIXO */
 .wa{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:10px;background:var(--amber);color:#1A1100;text-decoration:none;font-weight:700;font-size:15px;padding:13px 20px;border-radius:999px;box-shadow:0 12px 34px rgba(0,0,0,.4)}
 
+/* Barra some ao rolar para baixo; botão fixo só aparece depois do hero */
+.nav{transition:top .35s ease,opacity .35s ease}
+.nav.hide{top:-90px;opacity:0;pointer-events:none}
+.wa{opacity:0;transform:translateY(18px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+.wa.show{opacity:1;transform:none;pointer-events:auto}
+.btn{text-align:center;line-height:1.25}
+.btn svg{flex-shrink:0}
+.nav .btn{white-space:nowrap}
+
+/* Serviços: 4 cards */
+.cards.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--ink);background:#E6EEED;border:1px solid rgba(10,42,49,.14);border-radius:999px;padding:7px 14px}
+.shot{width:100%;max-width:220px;height:auto;display:block;margin-bottom:18px}
+
 @media (max-width:900px){
+  .cards.four{grid-template-columns:minmax(0,1fr)}
+  .btn{font-size:15px;padding:14px 20px}
+  .cta-row{flex-direction:column;align-items:stretch}
+  .cta-row .btn{width:100%;justify-content:center}
+  .cta-row small{text-align:center}
+  .nav{padding:8px 8px 8px 14px}
+  .brand small{display:none}
+  .nav .btn.sm{padding:10px 14px;font-size:13px}
+  .wa{left:16px;right:16px;bottom:16px;justify-content:center}
   .nav ul{display:none}
   .hero{padding-top:120px}
   .hero-grid,.about,.final .grid{grid-template-columns:minmax(0,1fr)}
@@ -203,7 +227,7 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
   <canvas id="gl" aria-hidden="true"></canvas>
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">Google Ads para negócios locais</p>
+      <p class="eyebrow">Google Ads e Meta Ads para negócios locais</p>
       <h1 style="margin-top:20px" aria-label="Seu cliente já está no Google. Ele precisa te encontrar.">
         <span class="w"><span class="wi">Seu</span></span>
         <span class="w"><span class="wi">cliente</span></span>
@@ -216,7 +240,7 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
         <em><span class="w"><span class="wi">te</span></span>
         <span class="w"><span class="wi">encontrar.</span></span></em>
       </h1>
-      <p class="lead" data-intro>Gestão de Google Ads, site e Google Meu Negócio para negócios locais. Peça um diagnóstico gratuito e veja onde você está perdendo clientes na busca.</p>
+      <p class="lead" data-intro>Gestão de Google Ads, Meta Ads, site e Google Meu Negócio para negócios locais. Peça um diagnóstico gratuito e veja onde você está perdendo clientes na busca.</p>
       <div class="cta-row" data-intro>
         <a class="btn mag" href="#diagnostico">Quero meu diagnóstico gratuito
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -240,8 +264,8 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
 
 <div class="marq" aria-hidden="true">
   <div class="track">
-    <span>Google Ads</span><span>Google Meu Negócio</span><span>Sites e landing pages</span><span>Dashboards</span><span>Mini apps</span>
-    <span>Google Ads</span><span>Google Meu Negócio</span><span>Sites e landing pages</span><span>Dashboards</span><span>Mini apps</span>
+    <span>Google Ads</span><span>Meta Ads</span><span>Google Meu Negócio</span><span>Sites e landing pages</span><span>Dashboards</span>
+    <span>Google Ads</span><span>Meta Ads</span><span>Google Meu Negócio</span><span>Sites e landing pages</span><span>Dashboards</span>
   </div>
 </div>
 
@@ -254,27 +278,50 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
       <article class="spot" data-reveal><div class="n">02</div><h3>Seu Google Meu Negócio está abandonado</h3><p>Fotos antigas, horário errado e avaliações sem resposta fazem o cliente escolher outro antes mesmo de ligar.</p></article>
       <article class="spot" data-reveal><div class="n">03</div><h3>Você já anunciou e não vendeu</h3><p>Clique sem cliente: campanha aberta para qualquer busca, e não para quem quer comprar agora.</p></article>
     </div>
-    <p class="turn" data-reveal>A Laitu resolve nesta ordem: <em>ser encontrado → ser escolhido → virar contato.</em></p>
+    <p class="turn" data-reveal>A Laitu resolve nesta ordem: <em>ser encontrado → ser escolhido → vender.</em></p>
   </div>
 </section>
 
 <section class="sec paper" id="servicos">
   <div class="wrap">
     <p class="eyebrow" data-reveal>Serviços</p>
-    <h2 style="margin-top:16px;max-width:860px" data-reveal>Três frentes para você ser achado, escolhido e chamado.</h2>
-    <div class="cards">
+    <h2 style="margin-top:16px;max-width:860px" data-reveal>Quatro frentes para você ser achado, escolhido e vender.</h2>
+    <div class="cards four">
       <article class="spot" data-reveal>
+        <div class="chips"><span class="chip">Google Ads</span></div>
         <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M8 11h6M11 8v6"/></svg></div>
         <h3>Gestão de Google Ads</h3><p>Anúncios para quem quer comprar agora: aparecemos na hora exata em que o cliente pesquisa por você.</p>
         <a class="lnk" href="#diagnostico">Quero isso no meu diagnóstico</a>
       </article>
       <article class="spot" data-reveal>
+        <div class="chips"><span class="chip">Google Meu Negócio</span></div>
         <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
         <h3>Google Meu Negócio</h3><p>Perfil completo, atual e com cara de negócio que merece a ligação: fotos, horários, serviços e avaliações.</p>
         <a class="lnk" href="#diagnostico">Quero isso no meu diagnóstico</a>
       </article>
       <article class="spot" data-reveal>
-        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div>
+        <div class="chips"><span class="chip">Meta Ads</span><span class="chip">Facebook</span><span class="chip">Instagram</span></div>
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg></div>
+        <h3>Gestão de Meta Ads</h3><p>Anúncios no Facebook e no Instagram para mostrar seu negócio às pessoas certas, perto de você, mesmo antes de elas pesquisarem.</p>
+        <a class="lnk" href="#diagnostico">Quero isso no meu diagnóstico</a>
+      </article>
+      <article class="spot" data-reveal>
+        <svg class="shot" viewBox="0 0 220 130" role="img" aria-label="Ilustração de uma página de site no computador e no celular">
+          <rect x="4" y="6" width="150" height="104" rx="10" fill="#0A2A31"/>
+          <rect x="4" y="6" width="150" height="18" rx="10" fill="#14414C"/>
+          <circle cx="16" cy="15" r="3" fill="#F5A623"/><circle cx="26" cy="15" r="3" fill="#2BB3A8"/><circle cx="36" cy="15" r="3" fill="#A9C1C5"/>
+          <rect x="16" y="34" width="70" height="8" rx="4" fill="#F2EFE8"/>
+          <rect x="16" y="48" width="104" height="5" rx="2.5" fill="#5F8089"/>
+          <rect x="16" y="58" width="88" height="5" rx="2.5" fill="#5F8089"/>
+          <rect x="16" y="74" width="48" height="16" rx="8" fill="#F5A623"/>
+          <rect x="100" y="70" width="38" height="28" rx="6" fill="#14414C"/>
+          <rect x="150" y="30" width="62" height="98" rx="10" fill="#0A2A31" stroke="#F5A623" stroke-width="2"/>
+          <rect x="160" y="44" width="42" height="7" rx="3.5" fill="#F2EFE8"/>
+          <rect x="160" y="57" width="42" height="4" rx="2" fill="#5F8089"/>
+          <rect x="160" y="66" width="34" height="4" rx="2" fill="#5F8089"/>
+          <rect x="160" y="82" width="42" height="14" rx="7" fill="#F5A623"/>
+        </svg>
+        <div class="chips"><span class="chip">Site</span><span class="chip">Landing page</span></div>
         <h3>Sites e landing pages</h3><p>Páginas rápidas no celular, com um caminho claro até o WhatsApp, para o clique virar contato.</p>
         <a class="lnk" href="#diagnostico">Quero isso no meu diagnóstico</a>
       </article>
@@ -304,7 +351,7 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
       <p class="eyebrow" data-reveal>Quem está por trás</p>
       <h2 style="margin-top:16px" data-reveal>Uma agência pequena, feita com cuidado.</h2>
       <p data-reveal>Sou [SEU NOME]. [Escreva aqui 2 linhas sobre você: o que faz e por que trabalha com negócios locais.]</p>
-      <p data-reveal>O nome Laitu vem da junção de Laila e Arthur. Aqui você fala direto com quem cuida do seu anúncio.</p>
+      <p data-reveal>Aqui você fala direto com quem cuida do seu anúncio.</p>
       <div class="pledge" data-reveal>
         <h3>Meus compromissos</h3>
         <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>A conta de anúncios fica no seu nome.</span></div>
@@ -376,6 +423,24 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
       b.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   });
+
+  /* ---------- Barra some ao descer; botão fixo só depois do hero ---------- */
+  (function(){
+    var nav = document.querySelector('.nav'), lastY = window.scrollY;
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY;
+      if (y < 80 || y < lastY - 6) nav.classList.remove('hide');
+      else if (y > lastY + 6) nav.classList.add('hide');
+      lastY = y;
+    }, {passive:true});
+    var wa = document.querySelector('.wa'), hero = document.querySelector('.hero'), fin = document.getElementById('diagnostico');
+    var heroOn = true, finOn = false;
+    function upd(){ wa.classList.toggle('show', !heroOn && !finOn); }
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(function(e){ heroOn = e[0].isIntersecting; upd(); }, {threshold:0.15}).observe(hero);
+      new IntersectionObserver(function(e){ finOn = e[0].isIntersecting; upd(); }, {threshold:0.1}).observe(fin);
+    } else { wa.classList.add('show'); }
+  })();
 
   /* ---------- Spotlight nos cards ---------- */
   document.querySelectorAll('.spot').forEach(function(c){
