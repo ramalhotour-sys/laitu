@@ -1,0 +1,9 @@
+README.md
+.git
+.env*
+*.bak
+*.old
+*.sql
+*.zip
+*.log
+node_modules
