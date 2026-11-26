@@ -6,6 +6,20 @@
 <title>Laitu Marketing e Mídias</title>
 <meta name="description" content="Gestão de Google Ads, Google Meu Negócio e sites para negócios locais. Peça um diagnóstico gratuito.">
 <meta name="robots" content="noindex, nofollow"><!-- REMOVER quando os placeholders forem preenchidos e o site for oficial -->
+<!-- LGPD: consentimento padrão do Google (Consent Mode v2). Tudo negado até a pessoa escolher no banner. Manter ANTES de qualquer tag do Google. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -182,6 +196,63 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
 .lg img{height:40px;width:auto;display:block}
 .shot{width:100%;max-width:220px;height:auto;display:block;margin-bottom:18px}
 
+/* ===== LGPD: rodapé legal, banner de cookies e janelas de política ===== */
+.lt-link{all:unset;cursor:pointer;text-decoration:underline;text-underline-offset:3px;color:inherit}
+.lt-link:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px}
+footer .lt-legal-dados{font-size:14px;line-height:1.7}
+.lt-legal-nav{width:100%;display:flex;flex-wrap:wrap;gap:4px 24px;border-top:1px solid var(--line);padding-top:20px;margin-top:4px;font-size:14px}
+.lt-legal-nav .lt-link{min-height:44px;display:inline-flex;align-items:center;color:var(--text)}
+.lt-legal-nav small{margin-left:auto;align-self:center;color:var(--muted)}
+.lt-aviso{font-size:13.5px;line-height:1.5;color:var(--muted);text-align:center}
+.lt-aviso .lt-link{color:var(--text)}
+
+.lt-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:200;max-width:880px;margin:0 auto;background:var(--bg2);color:var(--text);border:1px solid rgba(245,166,35,.45);border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.55);padding:22px 24px;display:none}
+.lt-banner.lt-aberto{display:block}
+.lt-banner h2{font-size:28px;line-height:1.1;margin:0 0 8px}
+.lt-banner p{font-size:15px;line-height:1.55;color:var(--muted);margin:0 0 16px}
+.lt-banner p .lt-link{color:var(--text)}
+.lt-acoes{display:flex;flex-wrap:wrap;gap:10px}
+.lt-acoes .btn{flex:1 1 170px;justify-content:center;padding:13px 20px;font-size:15px}
+.btn.lt-contorno{background:transparent;color:var(--text);border:1.5px solid rgba(255,255,255,.4)}
+.btn.lt-contorno:hover{box-shadow:none;border-color:var(--amber)}
+
+.lt-dialog{border:0;padding:0;border-radius:24px;width:min(760px,calc(100% - 24px));max-height:calc(100vh - 32px);background:#F7F4EE;color:var(--ink);font-family:var(--sans)}
+.lt-dialog::backdrop{background:rgba(4,20,24,.72)}
+.lt-dialog-topo{position:sticky;top:0;z-index:1;background:var(--bg);color:var(--text);padding:18px 18px 18px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.lt-dialog-topo h2{font-size:30px;line-height:1.1}
+.lt-fechar{all:unset;cursor:pointer;width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.lt-fechar:focus-visible{outline:3px solid var(--amber)}
+.lt-fechar:hover{background:rgba(255,255,255,.08)}
+.lt-dialog-corpo{padding:24px 26px;font-size:15.5px;line-height:1.65}
+.lt-dialog-corpo h3{font-size:24px;line-height:1.15;margin:26px 0 8px;color:var(--ink)}
+.lt-dialog-corpo h3:first-of-type{margin-top:6px}
+.lt-dialog-corpo p,.lt-dialog-corpo ul{margin:0 0 10px}
+.lt-dialog-corpo ul{padding-left:20px}
+.lt-dialog-corpo .lt-link{color:var(--ink);font-weight:700}
+.lt-tabela{overflow-x:auto;margin:6px 0 12px}
+.lt-dialog-corpo table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;min-width:480px}
+.lt-dialog-corpo th{background:var(--ink);color:#fff;text-align:left;padding:9px 10px;font-weight:600}
+.lt-dialog-corpo td{padding:9px 10px;border-top:1px solid #D9D4C7;vertical-align:top}
+.lt-data{font-size:13px;color:#4A5257}
+.lt-dialog-rodape{position:sticky;bottom:0;background:#fff;border-top:1px solid #D9D4C7;padding:14px 20px;display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.lt-dialog-rodape .btn{padding:12px 20px;font-size:15px}
+.btn.lt-escuro{background:var(--ink);color:#fff}
+.btn.lt-escuro:hover{box-shadow:none;background:#14414C}
+.btn.lt-claro{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.lt-claro:hover{box-shadow:none;background:#E6EEED}
+.lt-categoria{background:#fff;border:1px solid #D9D4C7;border-radius:16px;padding:16px 18px;margin-bottom:12px;display:flex;gap:16px;align-items:center;justify-content:space-between}
+.lt-categoria strong{display:block;margin-bottom:4px}
+.lt-categoria p{margin:0;font-size:14px;color:#33525A}
+.lt-switch{position:relative;flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;cursor:pointer;min-height:44px}
+.lt-switch input{position:absolute;opacity:0;width:1px;height:1px}
+.lt-switch .lt-trilho{width:48px;height:28px;border-radius:999px;background:#9AA7AA;position:relative;transition:background .15s}
+.lt-switch .lt-trilho::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .15s}
+.lt-switch input:checked+.lt-trilho{background:var(--ink)}
+.lt-switch input:checked+.lt-trilho::after{transform:translateX(20px)}
+.lt-switch input:focus-visible+.lt-trilho{outline:3px solid var(--amber);outline-offset:2px}
+.lt-switch input:disabled+.lt-trilho{opacity:.55}
+.lt-sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+
 @media (max-width:900px){
   .cards.four{grid-template-columns:minmax(0,1fr)}
   .btn{font-size:15px;padding:14px 20px}
@@ -199,6 +270,10 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
   .line{display:none}
   .sec{padding:80px 0}
   .photo{height:420px}
+  .lt-banner{left:8px;right:8px;bottom:8px;padding:18px}
+  .lt-categoria{flex-direction:column;align-items:flex-start}
+  .lt-legal-nav small{margin-left:0;width:100%}
+  footer{padding-bottom:96px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -206,6 +281,7 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
   .r.me{animation:none}
   .track{animation:none}
   .caret{animation:none}
+  .lt-switch .lt-trilho,.lt-switch .lt-trilho::after{transition:none}
 }
 </style>
 </head>
@@ -391,6 +467,7 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
       <label for="f-zap">WhatsApp<input id="f-zap" name="zap" type="tel" placeholder="(21) 90000-0000" autocomplete="tel" required></label>
       <button class="btn" type="submit">Quero meu diagnóstico gratuito</button>
       <p class="note" id="note">Ao enviar, a mensagem fica pronta para abrir no WhatsApp.</p>
+      <p class="lt-aviso">Usamos seus dados só para preparar o diagnóstico e responder pelo WhatsApp. Veja a <button type="button" class="lt-link" data-lt-abrir="lt-politica">Política de Privacidade</button>.</p>
       <div class="done" id="done" aria-live="polite">
         <p><b>Mensagem pronta.</b> Toque no botão para abrir o WhatsApp e enviar.</p>
         <a class="btn sm" id="wa-link" href="#diagnostico" target="_blank" rel="noopener">Abrir WhatsApp</a>
@@ -404,11 +481,161 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
 <footer>
   <div class="wrap">
     <div><b>Laitu Marketing e Mídias</b><br>Google Ads, Google Meu Negócio e sites para negócios locais.</div>
-    <div>[WHATSAPP] · [INSTAGRAM]<br>[CIDADE / ATENDIMENTO]</div>
+    <div class="lt-legal-dados">[RAZÃO SOCIAL] · CNPJ [CNPJ]<br>[CIDADE - UF] · WhatsApp [WHATSAPP] · [INSTAGRAM]<br>Contato de privacidade: [SEU E-MAIL]</div>
+    <nav class="lt-legal-nav" aria-label="Informações legais">
+      <button type="button" class="lt-link" data-lt-abrir="lt-politica">Política de Privacidade</button>
+      <button type="button" class="lt-link" data-lt-abrir="lt-cookies">Política de Cookies</button>
+      <button type="button" class="lt-link" data-lt-abrir="lt-preferencias">Gerenciar cookies</button>
+      <small>© <span id="lt-ano">2026</span> Laitu Marketing e Mídias</small>
+    </nav>
   </div>
 </footer>
 
 <a class="wa" href="#diagnostico">Diagnóstico gratuito</a>
+
+<!-- ===== LGPD: banner de cookies ===== -->
+<section class="lt-banner" id="lt-banner" aria-labelledby="lt-banner-titulo">
+  <h2 id="lt-banner-titulo">Sua privacidade importa</h2>
+  <p>Usamos cookies essenciais para o site funcionar. Com a sua permissão, também usamos cookies do Google e da Meta para medir visitas e mostrar nossos anúncios a quem tem interesse. Você escolhe. Saiba mais na <button type="button" class="lt-link" data-lt-abrir="lt-cookies">Política de Cookies</button>.</p>
+  <div class="lt-acoes">
+    <button type="button" class="btn lt-contorno" data-lt-acao="recusar">Recusar</button>
+    <button type="button" class="btn lt-contorno" data-lt-abrir="lt-preferencias">Personalizar</button>
+    <button type="button" class="btn" data-lt-acao="aceitar">Aceitar todos</button>
+  </div>
+</section>
+
+<!-- ===== LGPD: preferências de cookies ===== -->
+<dialog class="lt-dialog" id="lt-preferencias" aria-labelledby="lt-pref-titulo">
+  <div class="lt-dialog-topo">
+    <h2 id="lt-pref-titulo">Preferências de cookies</h2>
+    <button type="button" class="lt-fechar" data-lt-fechar aria-label="Fechar"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="lt-dialog-corpo">
+    <div class="lt-categoria">
+      <div><strong>Essenciais</strong><p>Fazem o site funcionar e guardam a sua escolha sobre cookies. Não podem ser desligados.</p></div>
+      <label class="lt-switch"><input type="checkbox" checked disabled><span class="lt-trilho"></span>Sempre ativos</label>
+    </div>
+    <div class="lt-categoria">
+      <div><strong>Medição (Google Analytics)</strong><p>Contam visitas e mostram quais partes do site são mais vistas, de forma agregada.</p></div>
+      <label class="lt-switch"><input type="checkbox" id="lt-op-analise"><span class="lt-trilho"></span><span class="lt-sr">Permitir cookies de medição</span></label>
+    </div>
+    <div class="lt-categoria">
+      <div><strong>Marketing (Google Ads e Pixel da Meta)</strong><p>Medem se nossos anúncios trazem contatos e permitem mostrar anúncios da Laitu a quem já visitou o site.</p></div>
+      <label class="lt-switch"><input type="checkbox" id="lt-op-marketing"><span class="lt-trilho"></span><span class="lt-sr">Permitir cookies de marketing</span></label>
+    </div>
+  </div>
+  <div class="lt-dialog-rodape">
+    <button type="button" class="btn lt-claro" data-lt-acao="recusar">Recusar todos</button>
+    <button type="button" class="btn lt-escuro" data-lt-acao="salvar">Salvar escolhas</button>
+    <button type="button" class="btn" data-lt-acao="aceitar">Aceitar todos</button>
+  </div>
+</dialog>
+
+<!-- ===== LGPD: Política de Privacidade (RASCUNHO: revisar com advogado antes de tirar o noindex) ===== -->
+<dialog class="lt-dialog" id="lt-politica" aria-labelledby="lt-pol-titulo">
+  <div class="lt-dialog-topo">
+    <h2 id="lt-pol-titulo">Política de Privacidade</h2>
+    <button type="button" class="lt-fechar" data-lt-fechar aria-label="Fechar"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="lt-dialog-corpo">
+    <p class="lt-data">Última atualização: [DATA DA PUBLICAÇÃO]</p>
+
+    <h3>1. Quem somos</h3>
+    <p>Este site é da Laitu Marketing e Mídias ([RAZÃO SOCIAL], CNPJ [CNPJ], [CIDADE - UF]). Somos a responsável (controladora, nos termos da Lei Geral de Proteção de Dados, Lei 13.709/2018) pelos dados pessoais coletados aqui.</p>
+    <p>Contato para assuntos de privacidade: <strong>[SEU E-MAIL]</strong>.</p>
+
+    <h3>2. Quais dados coletamos</h3>
+    <div class="lt-tabela"><table>
+      <thead><tr><th>De onde</th><th>Dados</th><th>Para quê</th></tr></thead>
+      <tbody>
+        <tr><td>Formulário de diagnóstico gratuito</td><td>Nome, nome do negócio, cidade e bairro, número de WhatsApp</td><td>Montar a mensagem para o nosso WhatsApp, preparar o diagnóstico que você pediu e responder</td></tr>
+        <tr><td>Conversa pelo WhatsApp</td><td>O que você escrever na conversa</td><td>Responder suas dúvidas e combinar o atendimento</td></tr>
+        <tr><td>Navegação (só com seu consentimento)</td><td>Páginas vistas, tempo no site, tipo de aparelho e navegador, cidade aproximada, identificadores de cookies</td><td>Medir visitas, saber se nossos anúncios funcionam e mostrar anúncios da Laitu a quem visitou o site</td></tr>
+      </tbody>
+    </table></div>
+    <p>O formulário não guarda nada no site: ele só monta a mensagem, e você decide se envia pelo WhatsApp. Pedimos só o necessário. Não pedimos CPF, documentos ou dados bancários.</p>
+
+    <h3>3. Base legal</h3>
+    <ul>
+      <li><strong>Formulário e WhatsApp:</strong> procedimentos preliminares a um contrato, a seu pedido (art. 7º, V, da LGPD).</li>
+      <li><strong>Cookies de medição e marketing:</strong> seu consentimento (art. 7º, I), que você pode retirar a qualquer momento em "Gerenciar cookies", no rodapé.</li>
+    </ul>
+
+    <h3>4. Com quem compartilhamos</h3>
+    <p>Não vendemos seus dados. Eles passam por estes serviços, que nos ajudam a operar o site e os anúncios:</p>
+    <ul>
+      <li><strong>WhatsApp (Meta):</strong> quando você envia a mensagem, a conversa acontece no WhatsApp.</li>
+      <li><strong>Google (Google Analytics e Google Ads):</strong> medição de visitas e de resultados de anúncios, só se você aceitar.</li>
+      <li><strong>Meta (Pixel do Facebook e Instagram):</strong> medição e exibição de anúncios, só se você aceitar.</li>
+      <li><strong>Vercel:</strong> hospedagem do site, que registra dados técnicos de acesso (como endereço IP).</li>
+      <li><strong>Google Fonts e Cloudflare (cdnjs):</strong> entregam as fontes e bibliotecas visuais do site e, para isso, recebem o endereço IP do seu aparelho.</li>
+    </ul>
+    <p>Esses serviços podem guardar dados em servidores fora do Brasil, seguindo as regras de transferência internacional da LGPD. Também podemos fornecer dados quando a lei ou uma autoridade exigir.</p>
+
+    <h3>5. Por quanto tempo guardamos</h3>
+    <ul>
+      <li>Dados de contato de quem não fechou serviço: até 12 meses depois do último contato, e depois apagamos.</li>
+      <li>Dados de clientes: enquanto durar o atendimento e pelo prazo que a lei exigir depois.</li>
+      <li>Registros de acesso ao site: 6 meses, como pede o Marco Civil da Internet (Lei 12.965/2014).</li>
+      <li>Cookies: pelo prazo descrito na <button type="button" class="lt-link" data-lt-abrir="lt-cookies">Política de Cookies</button>.</li>
+    </ul>
+
+    <h3>6. Seus direitos</h3>
+    <p>Pela LGPD (art. 18), você pode pedir a qualquer momento:</p>
+    <ul>
+      <li>confirmação de que tratamos seus dados e acesso a eles;</li>
+      <li>correção de dados incompletos ou errados;</li>
+      <li>exclusão dos dados, inclusive das nossas conversas e listas de contato;</li>
+      <li>informação sobre com quem compartilhamos;</li>
+      <li>retirada do consentimento e portabilidade.</li>
+    </ul>
+    <p>Para pedir, mande uma mensagem para <strong>[SEU E-MAIL]</strong> ou pelo WhatsApp [WHATSAPP]. Respondemos em até 15 dias. Se não ficar satisfeito, você pode procurar a Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+    <h3>7. Segurança</h3>
+    <p>O site usa conexão segura (HTTPS), e só quem atende você tem acesso aos seus dados.</p>
+
+    <h3>8. Crianças e adolescentes</h3>
+    <p>Nossos serviços são para empresas e empreendedores. Não coletamos de propósito dados de menores de 18 anos.</p>
+
+    <h3>9. Mudanças nesta política</h3>
+    <p>Se mudarmos esta política, atualizamos a data no topo. Mudanças importantes também aparecem em destaque no site.</p>
+  </div>
+  <div class="lt-dialog-rodape">
+    <button type="button" class="btn lt-claro" data-lt-abrir="lt-cookies">Ver Política de Cookies</button>
+    <button type="button" class="btn lt-escuro" data-lt-fechar>Fechar</button>
+  </div>
+</dialog>
+
+<!-- ===== LGPD: Política de Cookies ===== -->
+<dialog class="lt-dialog" id="lt-cookies" aria-labelledby="lt-cook-titulo">
+  <div class="lt-dialog-topo">
+    <h2 id="lt-cook-titulo">Política de Cookies</h2>
+    <button type="button" class="lt-fechar" data-lt-fechar aria-label="Fechar"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="lt-dialog-corpo">
+    <p class="lt-data">Última atualização: [DATA DA PUBLICAÇÃO]</p>
+    <h3>O que são cookies</h3>
+    <p>Cookies são pequenos arquivos que o site guarda no seu navegador. Alguns são necessários para o site funcionar. Outros só entram se você permitir.</p>
+    <h3>Cookies que usamos</h3>
+    <div class="lt-tabela"><table>
+      <thead><tr><th>Categoria</th><th>Serviço</th><th>Para quê</th><th>Duração</th></tr></thead>
+      <tbody>
+        <tr><td>Essencial</td><td>Laitu (armazenamento local "laitu_consent")</td><td>Guardar a sua escolha sobre cookies</td><td>12 meses</td></tr>
+        <tr><td>Medição</td><td>Google Analytics (_ga, _ga_*)</td><td>Contar visitas e entender o uso do site</td><td>até 2 anos</td></tr>
+        <tr><td>Marketing</td><td>Google Ads (_gcl_au e outros)</td><td>Medir contatos vindos de anúncios do Google</td><td>até 90 dias</td></tr>
+        <tr><td>Marketing</td><td>Pixel da Meta (_fbp, _fbc)</td><td>Medir resultados e mostrar anúncios no Facebook e Instagram</td><td>até 90 dias</td></tr>
+      </tbody>
+    </table></div>
+    <p>Os cookies de medição e marketing só são ativados depois que você clica em "Aceitar todos" ou liga a categoria em "Personalizar". Se você recusar, o site continua funcionando normalmente.</p>
+    <h3>Como mudar sua escolha</h3>
+    <p>Clique em "Gerenciar cookies", no rodapé, a qualquer momento. Você também pode apagar cookies nas configurações do seu navegador.</p>
+    <p>Mais detalhes sobre como tratamos seus dados estão na <button type="button" class="lt-link" data-lt-abrir="lt-politica">Política de Privacidade</button>.</p>
+  </div>
+  <div class="lt-dialog-rodape">
+    <button type="button" class="btn lt-claro" data-lt-abrir="lt-preferencias">Gerenciar cookies</button>
+    <button type="button" class="btn lt-escuro" data-lt-fechar>Fechar</button>
+  </div>
+</dialog>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -555,6 +782,112 @@ footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--tex
     }
     frame();
   })();
+})();
+</script>
+
+<!-- ===== LGPD: consentimento de cookies (Google Consent Mode v2 + Pixel da Meta só após aceite) ===== -->
+<script>
+(function(){
+  // TROQUE pelos seus IDs. Enquanto estiverem com X ou zeros, nada é carregado.
+  var GA_ID    = 'G-XXXXXXXXXX';      // Google Analytics 4
+  var ADS_ID   = 'AW-XXXXXXXXX';      // Google Ads
+  var PIXEL_ID = '000000000000000';   // Pixel da Meta
+  var CHAVE = 'laitu_consent', VERSAO = 1, VALIDADE_DIAS = 365;
+
+  var banner = document.getElementById('lt-banner');
+  var opAnalise = document.getElementById('lt-op-analise');
+  var opMarketing = document.getElementById('lt-op-marketing');
+  var ano = document.getElementById('lt-ano'); if (ano) ano.textContent = new Date().getFullYear();
+  var gtagCarregado = false, pixelCarregado = false, ultimoFoco = null;
+
+  function ler(){
+    try{
+      var c = JSON.parse(localStorage.getItem(CHAVE));
+      if (!c || c.v !== VERSAO) return null;
+      if (Date.now() - c.data > VALIDADE_DIAS*864e5) return null;
+      return c;
+    }catch(e){ return null; }
+  }
+  function salvar(analise, marketing){
+    var c = {v:VERSAO, data:Date.now(), analise:!!analise, marketing:!!marketing};
+    try{ localStorage.setItem(CHAVE, JSON.stringify(c)); }catch(e){}
+    return c;
+  }
+  function valido(id){ return !!id && !/X{4,}|^0+$/.test(id); }
+
+  function carregarGtag(){
+    if (gtagCarregado) return;
+    var primeiro = valido(GA_ID) ? GA_ID : (valido(ADS_ID) ? ADS_ID : null);
+    if (!primeiro) return;
+    gtagCarregado = true;
+    var s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + primeiro;
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    if (valido(GA_ID)) gtag('config', GA_ID);
+    if (valido(ADS_ID)) gtag('config', ADS_ID);
+  }
+  function carregarPixel(){
+    if (pixelCarregado || !valido(PIXEL_ID)) return;
+    pixelCarregado = true;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('consent','grant');
+    fbq('init', PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+  function aplicar(c){
+    gtag('consent','update',{
+      analytics_storage: c.analise ? 'granted' : 'denied',
+      ad_storage: c.marketing ? 'granted' : 'denied',
+      ad_user_data: c.marketing ? 'granted' : 'denied',
+      ad_personalization: c.marketing ? 'granted' : 'denied'
+    });
+    if (c.analise || c.marketing) carregarGtag();
+    if (c.marketing) carregarPixel(); else if (window.fbq) fbq('consent','revoke');
+    opAnalise.checked = c.analise;
+    opMarketing.checked = c.marketing;
+  }
+
+  function abrir(id){
+    var d = document.getElementById(id); if (!d) return;
+    document.querySelectorAll('.lt-dialog[open]').forEach(function(x){ if (x !== d) x.close(); });
+    if (!d.open){
+      ultimoFoco = ultimoFoco || document.activeElement;
+      if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open','');
+    }
+    var corpo = d.querySelector('.lt-dialog-corpo'); if (corpo) corpo.scrollTop = 0;
+    d.scrollTop = 0;
+    var fechar = d.querySelector('.lt-fechar'); if (fechar) fechar.focus();
+  }
+  function fecharTodos(){
+    document.querySelectorAll('.lt-dialog[open]').forEach(function(x){ if (x.close) x.close(); else x.removeAttribute('open'); });
+  }
+
+  document.addEventListener('click', function(ev){
+    var alvo = ev.target.closest('[data-lt-abrir],[data-lt-fechar],[data-lt-acao]');
+    if (!alvo) return;
+    if (alvo.hasAttribute('data-lt-abrir')){ abrir(alvo.getAttribute('data-lt-abrir')); return; }
+    if (alvo.hasAttribute('data-lt-fechar')){ fecharTodos(); return; }
+    var acao = alvo.getAttribute('data-lt-acao'), c = null;
+    if (acao === 'aceitar') c = salvar(true, true);
+    if (acao === 'recusar') c = salvar(false, false);
+    if (acao === 'salvar')  c = salvar(opAnalise.checked, opMarketing.checked);
+    if (c){ aplicar(c); banner.classList.remove('lt-aberto'); fecharTodos(); }
+  });
+
+  document.querySelectorAll('.lt-dialog').forEach(function(d){
+    d.addEventListener('click', function(ev){ if (ev.target === d) d.close(); });
+    d.addEventListener('close', function(){
+      if (!document.querySelector('.lt-dialog[open]') && ultimoFoco){ try{ ultimoFoco.focus(); }catch(e){} ultimoFoco = null; }
+    });
+  });
+
+  var atual = ler();
+  if (atual) aplicar(atual); else banner.classList.add('lt-aberto');
 })();
 </script>
 </body>
