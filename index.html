@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laitu Marketing e Mídias</title>
+<meta name="description" content="Gestão de Google Ads, Google Meu Negócio e sites para negócios locais. Peça um diagnóstico gratuito.">
+<meta name="robots" content="noindex, nofollow"><!-- REMOVER quando os placeholders forem preenchidos e o site for oficial -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Mundo visual: petróleo profundo com luz âmbar. Uma única cena 3D (hero), o resto é tipografia e microinteração. */
+:root{
+  --bg:#071E24; --bg2:#0B2B33; --paper:#E6EEED; --ink:#0A2A31;
+  --text:#F2EFE8; --muted:#A9C1C5; --amber:#F5A623; --teal:#2BB3A8;
+  --line:rgba(255,255,255,.13); --surface:rgba(255,255,255,.04);
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--amber)}
+.paper .eyebrow{color:#7A4A00}
+h2{font-size:clamp(36px,5vw,64px);line-height:1.06}
+.sec{padding:112px 0}
+
+/* NAV */
+.nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;width:min(1100px,calc(100% - 24px));display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 20px;border-radius:999px;background:rgba(7,30,36,.62);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand b{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1}
+.brand small{display:block;font-size:11px;color:var(--muted);letter-spacing:.06em;margin-top:2px}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-size:15px;color:var(--muted);transition:color .2s}
+.nav ul a:hover{color:var(--text)}
+
+/* BOTÕES */
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--amber);color:#1A1100;font-weight:700;font-size:16px;text-decoration:none;padding:15px 26px;border-radius:999px;border:0;cursor:pointer;font-family:var(--sans);transition:box-shadow .25s,transform .25s}
+.btn:hover{box-shadow:0 0 0 6px rgba(245,166,35,.22),0 12px 34px rgba(245,166,35,.35)}
+.btn svg{transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+.btn.sm{padding:11px 18px;font-size:15px}
+.mag{will-change:transform}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:150px 0 72px;isolation:isolate}
+#gl{position:absolute;inset:0;width:100%;height:100%;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,30,36,.94) 0%,rgba(7,30,36,.7) 45%,rgba(7,30,36,.15) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 28%)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
+.hero h1{font-size:clamp(46px,7.2vw,98px);line-height:1;letter-spacing:-.01em}
+.hero h1 em{color:var(--amber)}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.wi{display:inline-block}
+.hero .lead{margin:28px 0 36px;font-size:19px;color:var(--muted);max-width:540px}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px 24px}
+.cta-row small{color:var(--muted);font-size:14px}
+
+/* CARTÃO DE BUSCA */
+.serp{background:rgba(7,30,36,.66);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.bar{display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:13px 18px;font-size:16px}
+.typ{display:inline-block;overflow:hidden;white-space:nowrap;width:0;vertical-align:bottom;animation:typ 7s steps(21) infinite}
+.caret{display:inline-block;width:2px;height:18px;background:var(--text);margin-left:2px;vertical-align:middle;animation:blink 1s steps(1) infinite}
+.res{margin-top:16px;display:grid;gap:12px}
+.r{padding:14px 16px;border-radius:14px}
+.r.me{background:rgba(245,166,35,.14);border:1px solid rgba(245,166,35,.45);animation:rise 7s ease-out infinite}
+.r.me b{font-size:18px;font-weight:600;display:block;margin-top:6px}
+.tag{font-size:11px;font-weight:700;color:#1A1100;background:var(--amber);padding:2px 8px;border-radius:6px;margin-right:8px}
+.url{font-size:13px;color:var(--muted)}
+.r.o{opacity:.7}
+.r.o span{display:block;font-size:16px;margin-top:4px}
+.bars i{display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.14);margin-top:9px}
+.cap{margin-top:16px;font-size:12px;color:var(--muted);text-align:center}
+@keyframes typ{0%{width:0}35%{width:21ch}100%{width:21ch}}
+@keyframes rise{0%,35%{opacity:0;transform:translateY(26px)}55%,100%{opacity:1;transform:none}}
+@keyframes blink{50%{opacity:0}}
+
+/* MARQUEE */
+.marq{border-block:1px solid var(--line);overflow:hidden;background:var(--bg)}
+.track{display:flex;width:max-content;animation:slide 38s linear infinite}
+.track span{font-family:var(--serif);font-size:clamp(28px,4vw,46px);padding:18px 28px;white-space:nowrap;display:flex;align-items:center;gap:56px}
+.track span::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--amber);display:block}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* PROBLEMA */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:56px}
+.spot{position:relative;border-radius:24px;padding:34px;border:1px solid var(--line);background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(245,166,35,.2),transparent 62%),var(--surface);transition:border-color .25s}
+.spot:hover{border-color:rgba(245,166,35,.55)}
+.n{width:44px;height:44px;border-radius:50%;background:var(--amber);color:#1A1100;font-weight:700;display:grid;place-items:center;font-size:15px}
+.spot h3{font-size:30px;line-height:1.1;margin:26px 0 12px}
+.spot p{color:var(--muted)}
+.turn{margin-top:28px;border-radius:24px;padding:30px 36px;background:linear-gradient(100deg,var(--bg2),#0F3A44);border:1px solid var(--line);font-family:var(--serif);font-size:clamp(24px,3.2vw,38px);line-height:1.2}
+.turn em{color:var(--amber)}
+
+/* SERVIÇOS (claro) */
+.paper{background:var(--paper);color:var(--ink)}
+.paper .spot{background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(245,166,35,.32),transparent 62%),#fff;border-color:rgba(10,42,49,.12)}
+.paper .spot p{color:#33525A}
+.ico{width:54px;height:54px;border-radius:16px;background:var(--ink);display:grid;place-items:center}
+.lnk{display:inline-block;margin-top:22px;font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--amber);text-decoration-thickness:3px}
+.also{margin-top:30px;color:#33525A}
+
+/* COMO FUNCIONA */
+.como{background:var(--bg2)}
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:64px}
+.line{position:absolute;left:0;right:0;top:22px;height:2px;background:var(--line)}
+.line i{display:block;height:100%;background:var(--amber);transform-origin:left;transform:scaleX(1)}
+.step{position:relative}
+.step .n{position:relative;box-shadow:0 0 0 8px var(--bg2)}
+.step h3{font-size:28px;margin:24px 0 10px}
+.step p{color:var(--muted);font-size:16px}
+
+/* SOBRE */
+.about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:center}
+.photo{height:520px;border-radius:28px;overflow:hidden;border:1px dashed rgba(255,255,255,.35)}
+.photo div{height:112%;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);background:radial-gradient(circle at 30% 20%,rgba(43,179,168,.3),transparent 55%),linear-gradient(160deg,#0F3A44,#071E24)}
+.about p{color:var(--muted);margin-top:18px;max-width:560px}
+.pledge{margin-top:32px;border:1px solid var(--line);border-radius:24px;padding:26px 28px;background:var(--surface);display:grid;gap:14px}
+.pledge h3{font-size:26px}
+.pledge div{display:flex;gap:12px;align-items:flex-start}
+.pledge svg{flex-shrink:0;margin-top:4px}
+
+/* FAQ */
+.faq{max-width:860px;margin:48px auto 0}
+.fi{border-top:1px solid var(--line)}
+.fi:last-child{border-bottom:1px solid var(--line)}
+.fi button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 4px;cursor:pointer;font-size:20px;font-weight:600;line-height:1.35}
+.fi button:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.pm{position:relative;width:20px;height:20px;flex-shrink:0}
+.pm::before,.pm::after{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--amber);transition:transform .3s}
+.pm::after{transform:rotate(90deg)}
+.fi.open .pm::after{transform:rotate(0)}
+.ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.fi.open .ans{grid-template-rows:1fr}
+.ans>div{overflow:hidden}
+.ans p{color:var(--muted);padding:0 4px 26px;max-width:700px}
+
+/* CTA FINAL */
+.final{background:var(--amber);color:#1A1100}
+.final .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:56px;align-items:center}
+.final h2{font-size:clamp(40px,5.6vw,76px);line-height:1.02}
+.final .sub{margin-top:22px;font-size:19px;max-width:500px}
+.form{background:var(--bg);color:var(--text);border-radius:28px;padding:34px;display:grid;gap:16px;box-shadow:0 30px 70px rgba(26,17,0,.35)}
+.form label{display:grid;gap:6px;font-size:14px;font-weight:600}
+.form input{font:inherit;font-size:17px;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);color:var(--text)}
+.form input::placeholder{color:#8FA9AE}
+.form input:focus{outline:3px solid var(--amber);outline-offset:1px;border-color:var(--amber)}
+.form .btn{justify-content:center;width:100%}
+.note{font-size:14px;color:var(--muted);text-align:center}
+.done{display:none;border:1px solid rgba(245,166,35,.55);background:rgba(245,166,35,.1);border-radius:16px;padding:18px;gap:12px}
+.done.show{display:grid}
+.done a{justify-self:start}
+
+footer{background:#041418;padding:44px 0;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+footer b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--text)}
+
+/* WHATSAPP FIXO */
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:10px;background:var(--amber);color:#1A1100;text-decoration:none;font-weight:700;font-size:15px;padding:13px 20px;border-radius:999px;box-shadow:0 12px 34px rgba(0,0,0,.4)}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .hero{padding-top:120px}
+  .hero-grid,.about,.final .grid{grid-template-columns:minmax(0,1fr)}
+  .cards,.steps{grid-template-columns:minmax(0,1fr)}
+  .line{display:none}
+  .sec{padding:80px 0}
+  .photo{height:420px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .typ{animation:none;width:21ch}
+  .r.me{animation:none}
+  .track{animation:none}
+  .caret{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#topo" aria-label="Laitu Marketing e Mídias, início">
+    <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#F5A623"/><path d="M11 8v14h8" fill="none" stroke="#1A1100" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 16l6-6M18.5 10H23v4.5" fill="none" stroke="#1A1100" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span><b>Laitu</b><small>Marketing e Mídias</small></span>
+  </a>
+  <ul>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#como">Como funciona</a></li>
+    <li><a href="#faq">Perguntas</a></li>
+  </ul>
+  <a class="btn sm" href="#diagnostico">Diagnóstico gratuito</a>
+</header>
+
+<main id="topo">
+
+<section class="hero">
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Google Ads para negócios locais</p>
+      <h1 style="margin-top:20px" aria-label="Seu cliente já está no Google. Ele precisa te encontrar.">
+        <span class="w"><span class="wi">Seu</span></span>
+        <span class="w"><span class="wi">cliente</span></span>
+        <span class="w"><span class="wi">já</span></span>
+        <span class="w"><span class="wi">está</span></span>
+        <span class="w"><span class="wi">no</span></span>
+        <span class="w"><span class="wi">Google.</span></span>
+        <span class="w"><span class="wi">Ele</span></span>
+        <span class="w"><span class="wi">precisa</span></span>
+        <em><span class="w"><span class="wi">te</span></span>
+        <span class="w"><span class="wi">encontrar.</span></span></em>
+      </h1>
+      <p class="lead" data-intro>Gestão de Google Ads, site e Google Meu Negócio para negócios locais. Peça um diagnóstico gratuito e veja onde você está perdendo clientes na busca.</p>
+      <div class="cta-row" data-intro>
+        <a class="btn mag" href="#diagnostico">Quero meu diagnóstico gratuito
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <small>Sem compromisso. Respondo no WhatsApp.</small>
+      </div>
+    </div>
+    <div class="serp" data-intro aria-hidden="true">
+      <div class="bar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A9C1C5" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <span><span class="typ">dentista perto de mim</span><span class="caret"></span></span>
+      </div>
+      <div class="res">
+        <div class="r me"><span class="tag">Patrocinado</span><span class="url">seunegocio.com.br</span><b>Seu negócio aparece aqui, no topo</b><div class="bars"><i style="width:92%"></i><i style="width:62%"></i></div></div>
+        <div class="r o"><span class="url">clinicaexemploa.com.br</span><span>Concorrente A</span><div class="bars"><i style="width:86%"></i></div></div>
+        <div class="r o"><span class="url">clinicaexemplob.com.br</span><span>Concorrente B</span><div class="bars"><i style="width:74%"></i></div></div>
+      </div>
+      <p class="cap">Exemplo ilustrativo</p>
+    </div>
+  </div>
+</section>
+
+<div class="marq" aria-hidden="true">
+  <div class="track">
+    <span>Google Ads</span><span>Google Meu Negócio</span><span>Sites e landing pages</span><span>Dashboards</span><span>Mini apps</span>
+    <span>Google Ads</span><span>Google Meu Negócio</span><span>Sites e landing pages</span><span>Dashboards</span><span>Mini apps</span>
+  </div>
+</div>
+
+<section class="sec" id="problema">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>O problema</p>
+    <h2 style="margin-top:16px;max-width:860px" data-reveal>Hoje, quem precisa de um serviço pesquisa no Google antes de ligar.</h2>
+    <div class="cards">
+      <article class="spot" data-reveal><div class="n">01</div><h3>Você some quando pesquisam</h3><p>O concorrente aparece no topo do Google e você nem entra na lista. Quem não é encontrado não é escolhido.</p></article>
+      <article class="spot" data-reveal><div class="n">02</div><h3>Seu Google Meu Negócio está abandonado</h3><p>Fotos antigas, horário errado e avaliações sem resposta fazem o cliente escolher outro antes mesmo de ligar.</p></article>
+      <article class="spot" data-reveal><div class="n">03</div><h3>Você já anunciou e não vendeu</h3><p>Clique sem cliente: campanha aberta para qualquer busca, e não para quem quer comprar agora.</p></article>
+    </div>
+    <p class="turn" data-reveal>A Laitu resolve nesta ordem: <em>ser encontrado → ser escolhido → virar contato.</em></p>
+  </div>
+</section>
+
+<section class="sec paper" id="servicos">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>Serviços</p>
+    <h2 style="margin-top:16px;max-width:860px" data-reveal>Três frentes para você ser achado, escolhido e chamado.</h2>
+    <div class="cards">
+      <article class="spot" data-reveal>
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M8 11h6M11 8v6"/></svg></div>
+        <h3>Gestão de Google Ads</h3><p>Anúncios para quem quer comprar agora: aparecemos na hora exata em que o cliente pesquisa por você.</p>
+        <a class="lnk" href="#diagnostico">Quero isso no meu diagnóstico</a>
+      </article>
+      <article class="spot" data-reveal>
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+        <h3>Google Meu Negócio</h3><p>Perfil completo, atual e com cara de negócio que merece a ligação: fotos, horários, serviços e avaliações.</p>
+        <a class="lnk" href="#diagnostico">Quero isso no meu diagnóstico</a>
+      </article>
+      <article class="spot" data-reveal>
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div>
+        <h3>Sites e landing pages</h3><p>Páginas rápidas no celular, com um caminho claro até o WhatsApp, para o clique virar contato.</p>
+        <a class="lnk" href="#diagnostico">Quero isso no meu diagnóstico</a>
+      </article>
+    </div>
+    <p class="also" data-reveal>Também fazemos dashboards interativos e mini apps sob demanda.</p>
+  </div>
+</section>
+
+<section class="sec como" id="como">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>Como funciona</p>
+    <h2 style="margin-top:16px;max-width:760px" data-reveal>Começa de graça, sem compromisso.</h2>
+    <div class="steps">
+      <div class="line" aria-hidden="true"><i id="prog"></i></div>
+      <div class="step" data-reveal><div class="n">1</div><h3>Diagnóstico gratuito</h3><p>Eu pesquiso seu negócio no Google: como você aparece, quem são seus concorrentes e quais buscas trazem clientes.</p></div>
+      <div class="step" data-reveal><div class="n">2</div><h3>Conversa e plano</h3><p>Mostro o que encontrei e o que faria primeiro, sem enrolação.</p></div>
+      <div class="step" data-reveal><div class="n">3</div><h3>Execução</h3><p>Monto as campanhas, o Google Meu Negócio e a página que recebe o cliente.</p></div>
+      <div class="step" data-reveal><div class="n">4</div><h3>Acompanhamento</h3><p>Relatório simples do que entrou de contato e o que melhorar a cada período.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sobre">
+  <div class="wrap about">
+    <div class="photo" role="img" aria-label="Espaço reservado para a foto profissional"><div id="ph">[FOTO PROFISSIONAL<br>fundo limpo, luz natural]</div></div>
+    <div>
+      <p class="eyebrow" data-reveal>Quem está por trás</p>
+      <h2 style="margin-top:16px" data-reveal>Uma agência pequena, feita com cuidado.</h2>
+      <p data-reveal>Sou [SEU NOME]. [Escreva aqui 2 linhas sobre você: o que faz e por que trabalha com negócios locais.]</p>
+      <p data-reveal>O nome Laitu vem da junção de Laila e Arthur. Aqui você fala direto com quem cuida do seu anúncio.</p>
+      <div class="pledge" data-reveal>
+        <h3>Meus compromissos</h3>
+        <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>A conta de anúncios fica no seu nome.</span></div>
+        <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Você acompanha tudo, com relatório claro e sem caixa-preta.</span></div>
+        <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Eu explico para onde foi cada real do seu investimento.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec como" id="faq">
+  <div class="wrap">
+    <p class="eyebrow" style="text-align:center" data-reveal>Perguntas frequentes</p>
+    <h2 style="margin:16px auto 0;text-align:center;max-width:780px" data-reveal>O que as pessoas perguntam antes de pedir o diagnóstico.</h2>
+    <div class="faq">
+      <div class="fi open"><h3><button type="button" id="q1" aria-expanded="true" aria-controls="a1">O diagnóstico é mesmo gratuito? Qual é a pegadinha?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a1" role="region" aria-labelledby="q1"><div><p>É gratuito e não tem pegadinha. Eu pesquiso seu negócio no Google, mostro o que encontrei e você decide se quer seguir. Sem compromisso.</p></div></div></div>
+      <div class="fi"><h3><button type="button" id="q2" aria-expanded="false" aria-controls="a2">Quanto preciso investir em anúncio?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a2" role="region" aria-labelledby="q2"><div><p>O valor do anúncio vai direto para o Google e depende do seu negócio e da sua região. No diagnóstico eu mostro uma faixa realista para o seu caso.</p></div></div></div>
+      <div class="fi"><h3><button type="button" id="q3" aria-expanded="false" aria-controls="a3">Em quanto tempo vejo resultado?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a3" role="region" aria-labelledby="q3"><div><p>O Google Ads costuma gerar contatos rápido, porque aparece na hora em que a pessoa pesquisa. Depois, a campanha vai sendo otimizada com o tempo.</p></div></div></div>
+      <div class="fi"><h3><button type="button" id="q4" aria-expanded="false" aria-controls="a4">A conta de anúncios fica no meu nome?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a4" role="region" aria-labelledby="q4"><div><p>Sim. A conta e os dados são seus, e você acompanha tudo.</p></div></div></div>
+      <div class="fi"><h3><button type="button" id="q5" aria-expanded="false" aria-controls="a5">Vocês atendem o meu tipo de negócio?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a5" role="region" aria-labelledby="q5"><div><p>Atendo negócios locais com endereço físico, como clínicas, restaurantes, lojas, academias e delivery. Se o seu for outro, peça o diagnóstico e eu digo com sinceridade se faz sentido.</p></div></div></div>
+      <div class="fi"><h3><button type="button" id="q6" aria-expanded="false" aria-controls="a6">Preciso ter site para anunciar?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a6" role="region" aria-labelledby="q6"><div><p>Não é obrigatório, mas uma página rápida e clara faz o clique virar contato. Se você não tem, eu monto.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec final" id="diagnostico">
+  <div class="wrap grid">
+    <div>
+      <h2 data-reveal>Descubra onde você está perdendo clientes no Google.</h2>
+      <p class="sub" data-reveal>Preencha os dados do seu negócio. Eu faço a pesquisa e chamo você no WhatsApp com o que encontrei.</p>
+    </div>
+    <form class="form" id="form" novalidate>
+      <label for="f-nome">Seu nome<input id="f-nome" name="nome" type="text" placeholder="Como posso te chamar?" autocomplete="name" required></label>
+      <label for="f-neg">Nome do negócio<input id="f-neg" name="negocio" type="text" placeholder="Ex.: Clínica Sorriso" required></label>
+      <label for="f-loc">Cidade e bairro<input id="f-loc" name="local" type="text" placeholder="Ex.: Madureira, Rio de Janeiro" required></label>
+      <label for="f-zap">WhatsApp<input id="f-zap" name="zap" type="tel" placeholder="(21) 90000-0000" autocomplete="tel" required></label>
+      <button class="btn" type="submit">Quero meu diagnóstico gratuito</button>
+      <p class="note" id="note">Ao enviar, a mensagem fica pronta para abrir no WhatsApp.</p>
+      <div class="done" id="done" aria-live="polite">
+        <p><b>Mensagem pronta.</b> Toque no botão para abrir o WhatsApp e enviar.</p>
+        <a class="btn sm" id="wa-link" href="#diagnostico" target="_blank" rel="noopener">Abrir WhatsApp</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Laitu Marketing e Mídias</b><br>Google Ads, Google Meu Negócio e sites para negócios locais.</div>
+    <div>[WHATSAPP] · [INSTAGRAM]<br>[CIDADE / ATENDIMENTO]</div>
+  </div>
+</footer>
+
+<a class="wa" href="#diagnostico">Diagnóstico gratuito</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- FAQ ---------- */
+  document.querySelectorAll('.fi button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var item = b.closest('.fi'), open = item.classList.toggle('open');
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  /* ---------- Spotlight nos cards ---------- */
+  document.querySelectorAll('.spot').forEach(function(c){
+    c.addEventListener('pointermove', function(e){
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  /* ---------- Formulário -> mensagem de WhatsApp ---------- */
+  var WA_NUMBER = ''; // PREENCHER com o número real: 55 + DDD + número (ex.: 5521999999999)
+  var form = document.getElementById('form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = form.elements, ok = true;
+    ['nome','negocio','local','zap'].forEach(function(k){
+      var el = f[k]; var bad = !el.value.trim();
+      el.setAttribute('aria-invalid', bad ? 'true' : 'false');
+      if (bad) ok = false;
+    });
+    var note = document.getElementById('note');
+    if (!ok){ note.textContent = 'Preencha os quatro campos para eu preparar seu diagnóstico.'; return; }
+    if (!WA_NUMBER){ note.textContent = 'O WhatsApp da Laitu ainda não foi configurado neste site.'; return; }
+    var msg = 'Olá! Quero meu diagnóstico gratuito.\n' +
+      'Nome: ' + f.nome.value.trim() + '\n' +
+      'Negócio: ' + f.negocio.value.trim() + '\n' +
+      'Cidade e bairro: ' + f.local.value.trim() + '\n' +
+      'WhatsApp: ' + f.zap.value.trim();
+    var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+    var a = document.getElementById('wa-link'); a.href = url;
+    document.getElementById('done').classList.add('show');
+    note.textContent = '';
+  });
+
+  /* ---------- GSAP: entrada, scroll, magnético ---------- */
+  if (window.gsap && window.ScrollTrigger && !reduce) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Entrada do hero: palavras sobem por trás de uma máscara
+    var tl = gsap.timeline({defaults:{ease:'power3.out'}});
+    tl.from('.hero h1 .wi', {yPercent:115, duration:.9, stagger:.06})
+      .from('.hero [data-intro]', {y:28, opacity:0, duration:.8, stagger:.12}, '-=.5')
+      .from('.nav', {y:-30, opacity:0, duration:.7}, 0);
+
+    // Revelação por scroll: parte de um estado já legível (opacidade 0.3)
+    gsap.utils.toArray('[data-reveal]').forEach(function(el){
+      gsap.from(el, {y:44, opacity:.3, duration:.9, ease:'power3.out',
+        scrollTrigger:{trigger:el, start:'top 90%', once:true}});
+    });
+
+    // Linha de progresso do "Como funciona"
+    gsap.fromTo('#prog', {scaleX:0}, {scaleX:1, ease:'none',
+      scrollTrigger:{trigger:'.steps', start:'top 75%', end:'bottom 60%', scrub:true}});
+
+    // Parallax leve no espaço da foto
+    gsap.to('#ph', {yPercent:-9, ease:'none',
+      scrollTrigger:{trigger:'.photo', start:'top bottom', end:'bottom top', scrub:true}});
+
+    // Botão magnético
+    document.querySelectorAll('.mag').forEach(function(b){
+      b.addEventListener('pointermove', function(e){
+        var r = b.getBoundingClientRect();
+        gsap.to(b, {x:(e.clientX-r.left-r.width/2)*.18, y:(e.clientY-r.top-r.height/2)*.3, duration:.3});
+      });
+      b.addEventListener('pointerleave', function(){ gsap.to(b, {x:0, y:0, duration:.5, ease:'elastic.out(1,.5)'}); });
+    });
+  }
+
+  /* ---------- Three.js: onda de partículas no hero (única cena 3D) ---------- */
+  (function(){
+    if (!window.THREE || reduce) return;
+    var cv = document.getElementById('gl'), renderer;
+    try { renderer = new THREE.WebGLRenderer({canvas:cv, alpha:true, antialias:false}); } catch(err){ return; }
+    var small = window.innerWidth < 700;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, small ? 1 : 1.5));
+    var scene = new THREE.Scene();
+    var cam = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
+    cam.position.set(0, 7, 15); cam.lookAt(0, 0, 0);
+    var cols = small ? 70 : 140, rows = small ? 34 : 70, n = cols * rows;
+    var pos = new Float32Array(n*3), col = new Float32Array(n*3), k = 0;
+    for (var i=0; i<cols; i++) for (var j=0; j<rows; j++, k+=3){
+      var t = i/cols;
+      pos[k] = (t-.5)*42; pos[k+1] = 0; pos[k+2] = (j/rows-.5)*26;
+      col[k] = .17 + (.96-.17)*t; col[k+1] = .70 + (.65-.70)*t; col[k+2] = .66 + (.14-.66)*t;
+    }
+    var geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+    var mat = new THREE.PointsMaterial({size: small ? .12 : .09, vertexColors:true, transparent:true, opacity:.85, sizeAttenuation:true});
+    scene.add(new THREE.Points(geo, mat));
+    var mx = 0, my = 0, visible = true, time = 0;
+    window.addEventListener('pointermove', function(e){ mx = e.clientX/window.innerWidth - .5; my = e.clientY/window.innerHeight - .5; });
+    function size(){ var h = cv.parentElement; renderer.setSize(h.clientWidth, h.clientHeight, false); cam.aspect = h.clientWidth/h.clientHeight; cam.updateProjectionMatrix(); }
+    size(); window.addEventListener('resize', size);
+    new IntersectionObserver(function(en){ visible = en[0].isIntersecting; }).observe(cv.parentElement);
+    function frame(){
+      requestAnimationFrame(frame);
+      if (!visible || document.hidden) return;
+      time += .012;
+      var p = geo.attributes.position.array;
+      for (var q=0; q<n*3; q+=3){
+        var x = p[q], z = p[q+2];
+        p[q+1] = Math.sin(x*.32 + time)*.9 + Math.cos(z*.42 + time*.8)*.6 + Math.sin((x+z)*.2 + time*1.4)*.4;
+      }
+      geo.attributes.position.needsUpdate = true;
+      cam.position.x += (mx*4 - cam.position.x)*.04;
+      cam.position.y += (7 - my*2 - cam.position.y)*.04;
+      cam.lookAt(0, 0, 0);
+      renderer.render(scene, cam);
+    }
+    frame();
+  })();
+})();
+</script>
+</body>
+</html>
